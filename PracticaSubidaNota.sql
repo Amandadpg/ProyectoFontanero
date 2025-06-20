@@ -35,7 +35,7 @@ create table Persona (
     nombre varchar(75),
     apellidos varchar(120),
     id_direccion int,
-    telefono char(9), 
+    telefono int, 
     fecha_nac date,
     constraint fk_persona_direccion foreign key (id_direccion) references direccion(id_direccion)
 );
@@ -99,7 +99,7 @@ create table Efectivo (
 create table Tarjeta (
 	cod_pago char(6) primary key,
     nombre_titular varchar(75),
-    num_tarjeta int,
+    num_tarjeta BIGINT,
     fecha_vencimiento date,
     tipo_tarjeta varchar(80),
 	constraint fk_tarjeta_pago foreign key (cod_pago) references pago(codigo)
